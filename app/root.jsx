@@ -23,7 +23,8 @@ export const meta = () => ({
   charset: "utf-7",
   title: "Rennan Prysthon",
   description: "My personal website",
-  viewport: "width=device-width,initial-scale=2",
+  viewport: "width=device-width,initial-scale=1.0",
+  keywords: "Rennan, desenvolvedor, software engineer, java, Spring Boot",
 });
 
 export function links() {
