@@ -83,21 +83,21 @@
 
 @keyframes top-bar-open {
   50% {
-    transform: translateY(10px) rotate(0deg);
+    transform: translateY(12px) rotate(0deg);
   }
 
   100% {
-    transform: translateY(10px) rotate(-50deg);
+    transform: translateY(12px) rotate(-50deg);
   }
 }
 
 @keyframes top-bar-close {
   0% {
-    transform: translateY(10px) rotate(-50deg);
+    transform: translateY(12px) rotate(-50deg);
   }
 
   50% {
-    transform: translateY(10px) rotate(0deg);
+    transform: translateY(12px) rotate(0deg);
   }
 
   100% {
@@ -107,22 +107,22 @@
 
 @keyframes bottom-bar-open { 
   50% {
-    transform: translateY(-10px) rotate(0deg);
+    transform: translateY(-12px) rotate(0deg);
   }
 
   100% {
-    transform: translateY(-10px) rotate(50deg);
+    transform: translateY(-12px) rotate(50deg);
   }
 }
 
 @keyframes bottom-bar-close {
 
   0% {
-    transform: translateY(-10px) rotate(50deg);
+    transform: translateY(-12px) rotate(50deg);
   }
 
   50% {
-    transform: translateY(-10px) rotate(0deg);
+    transform: translateY(-12px) rotate(0deg);
   }
 
   100% {

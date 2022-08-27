@@ -1,34 +1,14 @@
-import { useRef, useEffect } from 'react'
+import { useRef } from 'react';
 
 export default function MenuButton({ toggleMenuState, opened }) {
-  const buttonRef = useRef(null);
+  const last = useRef(null);
 
-  function toggleButtonState(event) {
-    toggleMenuState()
-
-    event.preventDefault();
-    const { target: button } = event;
-
-    const isOpened = button.classList.contains('open');
-    const isClosed = button.classList.contains('closed');
-
-    if (isOpened) {
-      button.classList.remove('open');
-      button.classList.add('closed');
-      return;
-    }
-
-    if (isClosed) {
-      button.classList.remove('closed');
-      button.classList.add('open');
-      return;
-    }
-
-    button.classList.toggle('open')
-  }
+  const buttonClass = opened ? 'open' : !last.current ? '' : 'closed';
+  
+  last.current = opened
 
   return (
-    <button className="menu-button" onClick={toggleButtonState}>
+    <button className={`menu-button ${buttonClass}`} onClick={toggleMenuState}>
       <span className="line top"></span>
       <span className="line middle"></span>
       <span className="line bottom"></span>
