@@ -4,17 +4,31 @@ export default function MenuButton({ toggleMenuState, opened }) {
   const buttonRef = useRef(null);
 
   function toggleButtonState(event) {
-    event.preventDefault();
+    toggleMenuState()
 
-    event.target.classList.toggle('open');
+    event.preventDefault();
+    const { target: button } = event;
+
+    const isOpened = button.classList.contains('open');
+    const isClosed = button.classList.contains('closed');
+
+    if (isOpened) {
+      button.classList.remove('open');
+      button.classList.add('closed');
+      return;
+    }
+
+    if (isClosed) {
+      button.classList.remove('closed');
+      button.classList.add('open');
+      return;
+    }
+
+    button.classList.toggle('open')
   }
 
-  const buttonClassList = opened ? "open" : "";
-
-  console.log('rendered')
-
   return (
-    <button className={`menu-button ${buttonClassList}`} onClick={toggleMenuState}>
+    <button className="menu-button" onClick={toggleButtonState}>
       <span className="line top"></span>
       <span className="line middle"></span>
       <span className="line bottom"></span>
